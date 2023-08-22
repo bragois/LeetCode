@@ -1,0 +1,5 @@
+jobs:
+  my_job:
+    steps:
+      - name: Using Secret
+        run: echo ${{ secrets.LEETCODE_SESSION }}
