@@ -1,12 +1,9 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        map<int, int> mp;
-        for(auto n : nums){
-            if(mp.find(n) == mp.end()){
-                mp.insert(make_pair(n, 1));
-            }
-            else{
+        sort(nums.begin(), nums.end());
+        for(int idx = 0; idx < nums.size() - 1; idx++){
+            if(nums[idx] == nums[idx + 1]){
                 return true;
             }
         }
